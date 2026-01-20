@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace CITEK_test_app
 {
-    internal static class Configurations
+    internal static class Configuration
     {
         static public readonly string fiasNalogFilesInfoAddress = "https://fias.nalog.ru/WebServices/Public/GetLastDownloadFileInfo";
         static public readonly string garUnpackedFilesDirectory = Environment.CurrentDirectory + "\\FIAS_GAR\\Unpacked";
         static public readonly string garPackedFiles = Environment.CurrentDirectory + "\\FIAS_GAR\\gar.zip";
         static public readonly string garVersions = garUnpackedFilesDirectory + "\\" + "version.txt";
         static public readonly string fontPath = "Resources\\times.ttf";
+        static public readonly string defaultReportPath = Environment.CurrentDirectory + "\\FIAS_GAR";
     }
 }

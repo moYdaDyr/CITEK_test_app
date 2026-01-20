@@ -19,9 +19,9 @@ namespace CITEK_test_app
         {
             Logger.UpdateLog("Распаковка архива...");
 
-            using (var archive = new ZipArchive(new FileStream(Configurations.garPackedFiles, FileMode.Open, FileAccess.Read)))
+            using (var archive = new ZipArchive(new FileStream(Configuration.garPackedFiles, FileMode.Open, FileAccess.Read)))
             {
-                archive.ExtractToDirectory(Configurations.garUnpackedFilesDirectory);
+                archive.ExtractToDirectory(Configuration.garUnpackedFilesDirectory);
             }
 
             Logger.UpdateLog("Архив распакован");
@@ -36,7 +36,7 @@ namespace CITEK_test_app
 
             var levelsDocument = new XmlDocument();
 
-            string levelDocumentAddress = Directory.GetFiles(Configurations.garUnpackedFilesDirectory, "AS_OBJECT_LEVELS*.XML")[0];
+            string levelDocumentAddress = Directory.GetFiles(Configuration.garUnpackedFilesDirectory, "AS_OBJECT_LEVELS*.XML")[0];
 
             levelsDocument.Load(levelDocumentAddress);
 
@@ -59,7 +59,7 @@ namespace CITEK_test_app
 
             Logger.UpdateLog($"Загрузка об уровнях объектов завершена. Обнаружено {dataTable.Keys.Count} уровней");
 
-            string[] dataFiles = Directory.GetFiles(Configurations.garUnpackedFilesDirectory, "AS_ADDR_OBJ_2*.XML", SearchOption.AllDirectories);
+            string[] dataFiles = Directory.GetFiles(Configuration.garUnpackedFilesDirectory, "AS_ADDR_OBJ_2*.XML", SearchOption.AllDirectories);
 
             Logger.UpdateLog("Загрузка данных об объектах...");
 
@@ -109,7 +109,7 @@ namespace CITEK_test_app
 
         public static DateTime GetDate()
         {
-            string[] dateFileInfoStrings = File.ReadAllLines(Configurations.garVersions);
+            string[] dateFileInfoStrings = File.ReadAllLines(Configuration.garVersions);
             DateTime date = new DateTime();
             var parsingResult = DateTime.TryParse(dateFileInfoStrings[0], out date);
 

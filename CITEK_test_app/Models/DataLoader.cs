@@ -28,7 +28,7 @@ namespace CITEK_test_app
 
             HttpClient client = new HttpClient();
 
-            HttpResponseMessage? response = await client.GetAsync(Configurations.fiasNalogFilesInfoAddress, HttpCompletionOption.ResponseHeadersRead);
+            HttpResponseMessage? response = await client.GetAsync(Configuration.fiasNalogFilesInfoAddress, HttpCompletionOption.ResponseHeadersRead);
 
             response.EnsureSuccessStatusCode();
 
@@ -68,7 +68,7 @@ namespace CITEK_test_app
 
             SetProgressPercentEvent(0.0);
 
-            using (var archiveFileStream = new FileStream(Configurations.garPackedFiles, FileMode.Create, FileAccess.Write))
+            using (var archiveFileStream = new FileStream(Configuration.garPackedFiles, FileMode.Create, FileAccess.Write))
             {
                 using (var archiveInternetStream = await response.Content.ReadAsStreamAsync())
                 {
@@ -90,10 +90,10 @@ namespace CITEK_test_app
 
         private static void ClearGarDirectory()
         {
-            if (Directory.Exists(Configurations.garUnpackedFilesDirectory))
-                Directory.Delete(Configurations.garUnpackedFilesDirectory, true);
+            if (Directory.Exists(Configuration.garUnpackedFilesDirectory))
+                Directory.Delete(Configuration.garUnpackedFilesDirectory, true);
             
-            Directory.CreateDirectory(Configurations.garUnpackedFilesDirectory);
+            Directory.CreateDirectory(Configuration.garUnpackedFilesDirectory);
 
             Logger.UpdateLog("Директория под архив расчищена");
         }

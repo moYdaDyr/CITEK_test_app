@@ -33,12 +33,15 @@ namespace CITEK_test_app
                 SaveFileDialog sfd = new SaveFileDialog();
                 sfd.Filter = "(*.pdf)|*.pdf";
 
-                sfd.DefaultDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                sfd.DefaultDirectory = Configuration.defaultReportPath;
 
                 sfd.FileName = header.Replace(' ','_');
 
                 if (sfd.ShowDialog() == false)
+                {
+                    Logger.UpdateLog("Создание отчёта отменено");
                     return;
+                }
 
                 string file = sfd.FileName;
 
@@ -52,7 +55,7 @@ namespace CITEK_test_app
 
                         using (var report = new Document(pdfDocument, pageSize))
                         {
-                            PdfFont _baseFont = PdfFontFactory.CreateFont(Configurations.fontPath, "cp1251", PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED, true);
+                            PdfFont _baseFont = PdfFontFactory.CreateFont(Configuration.fontPath, "cp1251", PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED, true);
 
                             Paragraph head = new Paragraph(header);
                             head.SetFont(_baseFont);
