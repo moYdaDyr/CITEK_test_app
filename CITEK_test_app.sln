@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36310.24 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CITEK_test_app", "CITEK_test_app\CITEK_test_app.csproj", "{96B34749-CF30-4257-A828-4EF00AAE0676}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96B34749-CF30-4257-A828-4EF00AAE0676}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96B34749-CF30-4257-A828-4EF00AAE0676}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96B34749-CF30-4257-A828-4EF00AAE0676}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96B34749-CF30-4257-A828-4EF00AAE0676}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {639B5ACF-A7AC-487D-99BB-A60ECDCC9AE1}
+	EndGlobalSection
+EndGlobal
