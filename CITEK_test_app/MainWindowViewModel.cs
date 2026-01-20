@@ -101,7 +101,7 @@ namespace CITEK_test_app
             CreatingReportAllowed = false;
 
             ProgressPercent = 0.0;
-            Log = string.Empty;
+            Log = "Нажмите \"Загрузить данные\" чтобы начать работу\n";
 
             DataLoader.SetProgressPercentEvent += SetProgress;
             Logger.UpdateLogEvent += AddLogLine;

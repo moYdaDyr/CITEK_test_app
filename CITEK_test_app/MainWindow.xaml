@@ -25,7 +25,7 @@
         <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Прогресс загрузки данных:" Style="{StaticResource CommonTextBlockStyle}"/>
         <ProgressBar Name ="DownloadProgressBar" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource CommonProgressBarStyle}" Value="{Binding ProgressPercent, Mode=OneWay}" Maximum="1"/>
 
-        <Button Name="UpdateDataButton" Content="Обновить данные" Grid.Row ="3" Grid.Column="0" Style="{StaticResource CommonButtonStyle}" IsEnabled="{Binding UpdatingDataAllowed, Mode=OneWay}"/>
+        <Button Name="UpdateDataButton" Content="Загрузить данные" Grid.Row ="3" Grid.Column="0" Style="{StaticResource CommonButtonStyle}" IsEnabled="{Binding UpdatingDataAllowed, Mode=OneWay}"/>
         <Button Name="SaveDataInReportButton" Content="Создать отчёт" Grid.Row ="3" Grid.Column="1" Style="{StaticResource CommonButtonStyle}" IsEnabled="{Binding CreatingReportAllowed, Mode=OneWay}"/>
     </Grid>
 </Window>

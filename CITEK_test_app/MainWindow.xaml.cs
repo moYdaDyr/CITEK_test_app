@@ -34,13 +34,6 @@ namespace CITEK_test_app
             saveDataInReportCommandBinding.Executed += (DataContext as MainWindowViewModel).SaveDataInReportCommand_Execute;
             SaveDataInReportButton.CommandBindings.Add(saveDataInReportCommandBinding);
             SaveDataInReportButton.Command = MainWindowCommands.SaveDataInReportCommand;
-
-            this.Loaded += MainWindow_Loaded;
-        }
-
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }
